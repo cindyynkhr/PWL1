@@ -16,3 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    return 'Hello World';
+   });
+   
+Route::get('/world',function() {
+    return 'World';
+});
+
+Route::get('/', function (){
+    return 'Semalat Datang';
+});
+
+Route::get('/about', function(){
+    return 'Cindy Nur Khoiriyah, 2341720058';
+});
+
