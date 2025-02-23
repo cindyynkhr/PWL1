@@ -69,5 +69,15 @@ Route::get('/user/{name?}', function ($name = 'John'){
 Route::get('/user/profile', function() {
     //
 })->name('profile');
+
+//view//
+// Route::get('/greeting',function(){
+//     return view('blog.hello', ['name' => 'Cindy Nur Khoiriyah']);
+// });
+
+Route::get('/greeting', [WelcomeController::class,'greeting']);
+
+
+
    
 
