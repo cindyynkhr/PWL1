@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,22 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/hello', function () {
-    return 'Hello World';
-   });
    
 Route::get('/world',function() {
     return 'World';
 });
 
-Route::get('/', function (){
-    return 'Semalat Datang';
-});
+Route::get('/hello', [WelcomeController::class,'hello']);
 
-Route::get('/about', function(){
-    return 'Cindy Nur Khoiriyah, 2341720058';
-});
+Route::get('/index', [PageController::class,'index']);
+
+Route::get('/about', [PageController::class,'about']);
+
+Route::get('/articles/{id}', [PageController::class.'articles']);
 
 //route parameters//
 Route::get('/user/{name}', function($name){
@@ -41,10 +39,6 @@ Route::get('/user/{name}', function($name){
 
 Route::get('/posts/{post}/comments/{coment}', function($postId, $commentId){
     return 'Pos ke-'.$postId."Komentar ke-".$commentId;
-});
-
-Route::get('/articles/{id}', function($id){
-    return 'Halaman Artikel degan ID '.$id;
 });
 
 // //Optional Parameter//
